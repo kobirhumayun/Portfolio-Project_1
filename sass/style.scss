@@ -1,0 +1,144 @@
+// Common CSS
+@import 'reset';
+@import 'variable';
+
+html,
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(195.38deg, #64A8DF 19.85%, #F1EBD3 82.91%);
+    font-family: 'Ramabhadra', sans-serif;
+    color: $common-font-color;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+//nav area
+nav {
+    line-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .brand {
+        font-size: 25px;
+    }
+
+
+    .nav-item {
+        width: 80%;
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+
+            li {
+                padding: 5px 25px;
+                line-height: 30px;
+            }
+
+            li:hover {
+                background-color: $hover-bg;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+
+            li:hover a {
+                color: $hover-color;
+            }
+        }
+
+    }
+}
+
+//Main contant area
+.main-contant {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    margin-top: 50px;
+
+    .bio-area {
+        .hello {
+            background-color: $button-bg;
+            font-size: 16px;
+            color: $button-hover-bg;
+            width: 90px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 5px;
+
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+
+        P {
+            padding: 40px 0;
+            font-size: 16px;
+
+        }
+
+        button {
+            background-color: $button-bg;
+            color: $button-hover-bg;
+            padding: 10px 24px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: $button-hover-bg;
+            color: $common-font-color;
+
+        }
+    }
+
+    .social-link {
+        font-size: 50px;
+    }
+
+    .fa-facebook:hover {
+        color: #447399;
+    }
+
+    .fa-twitter:hover {
+        color: #64A8DF;
+    }
+
+    .fa-instagram-square:hover {
+        color: #CC2D78;
+    }
+
+    .fa-linkedin:hover {
+        color: $button-hover-bg;
+    }
+
+    .fa-facebook-messenger:hover {
+        color: #4674B8;
+    }
+
+    .fa-pinterest:hover {
+        color: #CC2128;
+    }
+
+    .profile-img {
+        grid-area: 1/2/span 2/3;
+
+        img {
+            width: 500px;
+            height: auto;
+        }
+    }
+
+}
