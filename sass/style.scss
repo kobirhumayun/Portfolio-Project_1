@@ -4,7 +4,8 @@
 
 html,
 body {
-    width: 100vw;
+    font-size: 16px;
+    max-width: 100vw;
     min-height: 100vh;
     background: linear-gradient(195.38deg, #64A8DF 19.85%, #F1EBD3 82.91%);
     font-family: 'Ramabhadra', sans-serif;
@@ -18,7 +19,7 @@ body {
 
 //nav area
 nav {
-    line-height: 80px;
+    line-height: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,27 +30,47 @@ nav {
     }
 
     .brand {
-        font-size: 25px;
+        font-size: 1.5625rem;
     }
 
 
     .nav-item {
-        width: 80%;
 
         ul {
             display: flex;
             justify-content: space-around;
 
             li {
-                padding: 5px 25px;
-                line-height: 30px;
+                position: relative;
+                padding: 0.3125em 1.5625em;
+                line-height: 1.875rem;
+                cursor: pointer;
+                z-index: 1;
+
+                a {
+                    color: #fff;
+                    transition: color 1s;
+                }
             }
 
-            li:hover {
-                background-color: $hover-bg;
-                border-radius: 20px;
-                cursor: pointer;
+            li::after {
+                position: absolute;
+                content: "";
+                display: block;
+                z-index: -1;
+                border-radius: 0.3125em;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 0;
+                background-color: #0e4d80;
+                transition: height .5s;
             }
+
+            li:hover::after {
+                height: 100%;
+            }
+
 
             li:hover a {
                 color: $hover-color;
@@ -63,49 +84,81 @@ nav {
 .main-contant {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
-    margin-top: 50px;
+    gap: 0.3125rem;
+    margin-top: 3.125rem;
 
     .bio-area {
         .hello {
             background-color: $button-bg;
-            font-size: 16px;
+            font-size: 1rem;
             color: $button-hover-bg;
-            width: 90px;
-            height: 40px;
+            width: 5.625rem;
+            height: 2.5rem;
             text-align: center;
-            line-height: 40px;
-            border-radius: 5px;
+            line-height: 2.5rem;
+            border-radius: 0.3125rem;
 
         }
 
         h2 {
-            font-size: 40px;
+            font-size: 2.5rem;
         }
 
         P {
-            padding: 40px 0;
-            font-size: 16px;
+            padding: 2.5rem 0;
+            font-size: 1rem;
 
         }
 
         button {
+            position: relative;
             background-color: $button-bg;
             color: $button-hover-bg;
-            padding: 10px 24px;
-            font-size: 18px;
-            border-radius: 5px;
+            font-size: 1.125rem;
+            cursor: pointer;
+            z-index: 1;
+            padding: 0.625em 1.5em;
+            border-radius: 0.3125em;
+            border: none;
+            transition: color 1s;
         }
 
+        button::after {
+            position: absolute;
+            content: "";
+            display: block;
+            z-index: -1;
+            border-radius: 0.3125em;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            background-color: #8f9eaa50;
+            transition: width .6s, height .6s;
+        }
+
+        button:hover::after {
+            width: 100%;
+            height: 100%;
+        }
+
+
+
         button:hover {
-            background-color: $button-hover-bg;
-            color: $common-font-color;
+            color: #102c4a8c;
+
+
 
         }
     }
 
     .social-link {
-        font-size: 50px;
+        font-size: 2rem;
+
+        i {
+            color: #fff;
+            transition: color .8s;
+        }
     }
 
     .fa-facebook:hover {
@@ -136,7 +189,7 @@ nav {
         grid-area: 1/2/span 2/3;
 
         img {
-            width: 500px;
+            width: 30rem;
             height: auto;
         }
     }

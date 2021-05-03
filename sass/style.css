@@ -55,7 +55,8 @@ table {
 
 html,
 body {
-  width: 100vw;
+  font-size: 16px;
+  max-width: 100vw;
   min-height: 100vh;
   background: linear-gradient(195.38deg, #64A8DF 19.85%, #F1EBD3 82.91%);
   font-family: 'Ramabhadra', sans-serif;
@@ -68,7 +69,7 @@ body {
 }
 
 nav {
-  line-height: 80px;
+  line-height: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,11 +87,7 @@ nav a {
 }
 
 nav .brand {
-  font-size: 25px;
-}
-
-nav .nav-item {
-  width: 80%;
+  font-size: 1.5625rem;
 }
 
 nav .nav-item ul {
@@ -102,14 +99,36 @@ nav .nav-item ul {
 }
 
 nav .nav-item ul li {
-  padding: 5px 25px;
-  line-height: 30px;
+  position: relative;
+  padding: 0.3125em 1.5625em;
+  line-height: 1.875rem;
+  cursor: pointer;
+  z-index: 1;
 }
 
-nav .nav-item ul li:hover {
-  background-color: rgba(189, 179, 179, 0.42);
-  border-radius: 20px;
-  cursor: pointer;
+nav .nav-item ul li a {
+  color: #fff;
+  -webkit-transition: color 1s;
+  transition: color 1s;
+}
+
+nav .nav-item ul li::after {
+  position: absolute;
+  content: "";
+  display: block;
+  z-index: -1;
+  border-radius: 0.3125em;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #0e4d80;
+  -webkit-transition: height .5s;
+  transition: height .5s;
+}
+
+nav .nav-item ul li:hover::after {
+  height: 100%;
 }
 
 nav .nav-item ul li:hover a {
@@ -121,45 +140,76 @@ nav .nav-item ul li:hover a {
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
-  margin-top: 50px;
+  gap: 0.3125rem;
+  margin-top: 3.125rem;
 }
 
 .main-contant .bio-area .hello {
   background-color: #fff;
-  font-size: 16px;
+  font-size: 1rem;
   color: #0679E4;
-  width: 90px;
-  height: 40px;
+  width: 5.625rem;
+  height: 2.5rem;
   text-align: center;
-  line-height: 40px;
-  border-radius: 5px;
+  line-height: 2.5rem;
+  border-radius: 0.3125rem;
 }
 
 .main-contant .bio-area h2 {
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 .main-contant .bio-area P {
-  padding: 40px 0;
-  font-size: 16px;
+  padding: 2.5rem 0;
+  font-size: 1rem;
 }
 
 .main-contant .bio-area button {
+  position: relative;
   background-color: #fff;
   color: #0679E4;
-  padding: 10px 24px;
-  font-size: 18px;
-  border-radius: 5px;
+  font-size: 1.125rem;
+  cursor: pointer;
+  z-index: 1;
+  padding: 0.625em 1.5em;
+  border-radius: 0.3125em;
+  border: none;
+  -webkit-transition: color 1s;
+  transition: color 1s;
+}
+
+.main-contant .bio-area button::after {
+  position: absolute;
+  content: "";
+  display: block;
+  z-index: -1;
+  border-radius: 0.3125em;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: #8f9eaa50;
+  -webkit-transition: width .6s, height .6s;
+  transition: width .6s, height .6s;
+}
+
+.main-contant .bio-area button:hover::after {
+  width: 100%;
+  height: 100%;
 }
 
 .main-contant .bio-area button:hover {
-  background-color: #0679E4;
-  color: #fff;
+  color: #102c4a8c;
 }
 
 .main-contant .social-link {
-  font-size: 50px;
+  font-size: 2rem;
+}
+
+.main-contant .social-link i {
+  color: #fff;
+  -webkit-transition: color .8s;
+  transition: color .8s;
 }
 
 .main-contant .fa-facebook:hover {
@@ -195,7 +245,7 @@ nav .nav-item ul li:hover a {
 }
 
 .main-contant .profile-img img {
-  width: 500px;
+  width: 30rem;
   height: auto;
 }
 /*# sourceMappingURL=style.css.map */
